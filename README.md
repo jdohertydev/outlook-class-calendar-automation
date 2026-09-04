@@ -140,6 +140,16 @@ Compared with the Zapier version, the VBA implementation added several explicit 
 - moved successfully processed emails into a `Processed` folder;
 - set a 15-minute calendar reminder.
 
+### Public VBA source
+
+The repository includes a cleaned and sanitised implementation of the original logic:
+
+- [`vba/ThisOutlookSession.bas`](vba/ThisOutlookSession.bas) — the Outlook VBA workflow;
+- [`vba/README.md`](vba/README.md) — setup instructions, historical differences and known limitations;
+- [`examples/class-added.sample.txt`](examples/class-added.sample.txt) — synthetic input matching the parser.
+
+The public source is deliberately not a verbatim dump of the private production module. It keeps the real workflow while removing account-specific information and making the old Inbox-sweep behaviour safer.
+
 ## Design evolution
 
 | Area | Zapier | Outlook VBA |
@@ -158,7 +168,7 @@ Compared with the Zapier version, the VBA implementation added several explicit 
 
 The original Inbox sweep moved messages out of the Inbox while iterating through the same Outlook collection. In live use, this occasionally meant I needed to press **Sweep** a second time to catch all pending confirmations.
 
-That behaviour is preserved here as part of the project history rather than presented as flawless. The public code will use a safer processing approach while documenting the difference from the historical implementation.
+The public implementation addresses the likely cause by iterating through the Inbox **backwards** before moving successfully processed messages. The historical limitation remains documented because it was part of the real operational experience rather than something to hide.
 
 ## What this project demonstrates
 
@@ -168,7 +178,8 @@ That behaviour is preserved here as part of the project history rather than pres
 - date/time transformation and timezone handling;
 - redesigning a working solution when cost constraints changed;
 - practical safeguards such as duplicate checks and processed-item handling;
-- documenting trade-offs and known limitations rather than hiding them.
+- debugging an old implementation and documenting the engineering trade-off;
+- documenting limitations rather than presenting a real system as flawless.
 
 ## Public-repository boundaries
 

@@ -38,6 +38,10 @@ Changes made for this repository:
 
 The backwards Inbox iteration addresses a limitation in the original implementation. The historical version moved messages out of the same `Inbox.Items` collection it was enumerating with `For Each`; in live use, that occasionally meant a second manual Sweep was needed to catch everything.
 
+## Validation status
+
+The historical VBA macro was used successfully in live operation. The exact sanitised/refactored source in this folder has **not** been re-run in Outlook after the cleanup changes above. It is therefore documented as a public refactor of the working historical implementation, not as a newly validated deployment.
+
 ## Setup
 
 1. Use **classic Outlook for Windows**. The new Outlook client does not run VBA macros.

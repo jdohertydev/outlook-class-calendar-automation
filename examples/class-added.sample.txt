@@ -1,0 +1,6 @@
+Subject: Schedule update: class added
+
+Class ID: SAMPLE001
+Date/time: 15.01.2025 09:00
+
+This is synthetic sample data for the public case study.

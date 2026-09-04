@@ -150,6 +150,10 @@ The repository includes a cleaned and sanitised implementation of the original l
 
 The public source is deliberately not a verbatim dump of the private production module. It keeps the real workflow while removing account-specific information and making the old Inbox-sweep behaviour safer.
 
+### Validation status
+
+The historical VBA macro was used successfully in live operation. The exact sanitised/refactored version published here has **not** been re-run in Outlook after those cleanup changes, so it is presented as a documented public refactor rather than as a newly validated deployment.
+
 ## Design evolution
 
 | Area | Zapier | Outlook VBA |

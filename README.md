@@ -56,9 +56,25 @@ Create event in main Outlook calendar
 
 The Outlook trigger used a **15-minute polling interval**. The workflow removed the manual data-entry work, although it was not an instant event-driven process.
 
-<!-- Screenshot placeholder: images/zapier-workflow-overview.png -->
-<!-- Screenshot placeholder: images/zapier-timezone-conversion.png -->
-<!-- Screenshot placeholder: images/zapier-calendar-action.png -->
+### Recovered workflow screenshots
+
+**Full nine-step workflow**
+
+![Sanitised Zapier workflow showing the nine-step Outlook and Formatter automation](images/zapier-workflow-overview.png)
+
+*Sanitised view of the recovered workflow: Outlook trigger, Formatter steps and final Outlook calendar action.*
+
+**Timezone conversion**
+
+![Sanitised Zapier configuration converting Europe London time to Europe Madrid](images/zapier-timezone-conversion.png)
+
+*The Zap converted `Europe/London` to `Europe/Madrid` explicitly rather than relying on a fixed one-hour offset.*
+
+**Calendar event creation**
+
+![Sanitised Zapier Outlook calendar action with mapped subject start end and description fields](images/zapier-calendar-action.png)
+
+*Final Outlook action mapping the processed class data into a calendar event. Production identifiers have been removed.*
 
 ### Why Zapier worked well
 
